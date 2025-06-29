@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Model Camera
+Exec=/bin/sh /home/pi/model-camera/launcher.sh

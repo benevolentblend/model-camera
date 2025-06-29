@@ -88,6 +88,7 @@ class AppWindow(QWidget):
         self.button_worker.moveToThread(self.button_thread)
         self.button_thread.started.connect(self.button_worker.run)
         self.button_worker.button_press.connect(self.record_toggle)
+        self.setCursor(Qt.BlankCursor)
 
         self.label.setText("Standby")
 
