@@ -1,4 +1,3 @@
-import time
 import os
 import shutil
 from datetime import datetime
@@ -58,7 +57,7 @@ class ButtonWorker(QObject):
             # Wait to stop recording.
             # We must wait for the button to be release,
             # or else we will could have a race condition where
-            # we receive our safe_to_record condition before 
+            # we receive our safe_to_record condition before
             # the button is released.
             button.wait_for_press()
             button.wait_for_release()
@@ -67,7 +66,7 @@ class ButtonWorker(QObject):
 
             # Wait for video to be saved
             self.safe_to_record.wait(mutex)
-            
+
             # Ensure we are not waking up in a bad state
             if button.is_pressed:
                 button.wait_for_release()
@@ -124,7 +123,6 @@ class AppWindow(QWidget):
 
         self.label.setText(f"Saved {self.current_file}")
         self.current_file = ""
-        time.sleep(5)
         self.safe_to_record.wakeAll()
 
     def record_toggle(self):
