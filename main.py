@@ -68,7 +68,7 @@ class ButtonWorker(QObject):
             # Wait for video to be saved
             self.safe_to_record.wait(mutex)
             
-            # Ensure we are not waiting up in a bad state
+            # Ensure we are not waking up in a bad state
             if button.is_pressed:
                 button.wait_for_release()
 
