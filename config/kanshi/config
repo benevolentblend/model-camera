@@ -1,0 +1,3 @@
+profile {
+    output SPI-1 mode 240x320@60.000Hz position 0,0 transform 270
+}
